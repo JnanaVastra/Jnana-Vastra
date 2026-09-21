@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jnana-Vastra | Digital Handloom & Manuscript Jacquard Weaving</title>
+  <title>Jnana-Vastra: A Woven Manuscript | Digital Handloom Heritage</title>
   
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&family=Yatra+One&display=swap" rel="stylesheet">
   
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -18,19 +18,20 @@
         extend: {
           colors: {
             heritage: {
-              cream: '#FBF8F2',
-              card: '#FFFFFF',
+              cream: '#FDFBF7',
+              surface: '#F4ECE1',
               navy: '#0B132B',
               slate: '#1C2541',
-              gold: '#C99E38',
-              goldDark: '#A37722',
-              crimson: '#7A1C24',
-              accent: '#FAF4E8'
+              cardDark: '#111C3A',
+              gold: '#D4AF37',
+              goldDark: '#9E781E',
+              crimson: '#7A1C24'
             }
           },
           fontFamily: {
             serif: ['Cinzel', 'serif'],
             display: ['Rozha One', 'serif'],
+            sanskrit: ['Yatra One', 'serif'],
             sans: ['Plus Jakarta Sans', 'sans-serif']
           }
         }
@@ -40,156 +41,155 @@
 
   <style>
     .bg-weave-pattern {
-      background-color: #FBF8F2;
+      background-color: #FDFBF7;
       background-image: 
-        linear-gradient(rgba(201, 158, 56, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201, 158, 56, 0.05) 1px, transparent 1px);
-      background-size: 24px 24px;
+        linear-gradient(rgba(212, 175, 55, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.07) 1px, transparent 1px);
+      background-size: 28px 28px;
     }
-
     .shimmer-gold {
-      background: linear-gradient(120deg, #b0811e 0%, #ecd083 50%, #b0811e 100%);
+      background: linear-gradient(120deg, #A37722 0%, #E6CA65 50%, #A37722 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
     #namaste-overlay {
       position: fixed;
       inset: 0;
-      z-index: 9999;
+      z-index: 99999;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: #0B132B;
+      background: radial-gradient(circle at center, #1C2541 0%, #0B132B 100%);
       color: #ffffff;
-      transition: transform 0.8s ease-in-out, opacity 0.6s ease-in-out;
+      transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.6s ease;
     }
   </style>
 </head>
 
-<body class="bg-weave-pattern text-slate-800 font-sans antialiased selection:bg-heritage-gold selection:text-white">
+<body class="bg-weave-pattern text-slate-800 font-sans antialiased selection:bg-heritage-gold selection:text-heritage-navy">
 
-  <!-- NAMASTE CURTAIN -->
-  <div id="namaste-overlay" class="px-6 cursor-pointer" onclick="dismissIntro()">
-    <div class="relative z-10 text-center max-w-xl">
-      <div class="inline-flex items-center justify-center w-24 h-24 rounded-full border-2 border-heritage-gold/50 bg-heritage-slate/60 shadow-[0_0_40px_rgba(201,158,56,0.3)] mb-6 animate-pulse">
-        <span class="text-4xl select-none">🙏</span>
+  <!-- ==================================================== -->
+  <!-- 1. AUTO "NAMASTE" INTRO CURTAIN                      -->
+  <!-- ==================================================== -->
+  <div id="namaste-overlay" class="px-6 text-center select-none" onclick="dismissIntro()">
+    <div class="relative z-10 max-w-lg mx-auto">
+      <div class="w-24 h-24 mx-auto rounded-full border-2 border-heritage-gold/50 bg-heritage-navy/70 flex items-center justify-center shadow-[0_0_50px_rgba(212,175,55,0.35)] mb-6 animate-pulse">
+        <span class="text-4xl">🙏</span>
       </div>
-
-      <h1 class="font-display text-4xl sm:text-5xl tracking-wide text-heritage-gold mb-3">
+      <h1 class="font-display text-4xl sm:text-5xl text-heritage-gold tracking-wide mb-2">
         नमस्ते • Namaste
       </h1>
-      <p class="font-serif tracking-[0.25em] text-xs sm:text-sm text-heritage-gold/80 uppercase mb-8">
-        Weaving Sacred Heritage Into Modern Fabric
+      <p class="font-serif text-xs sm:text-sm text-amber-100/80 tracking-[0.25em] uppercase mb-8">
+        Jnana-Vastra : A Woven Manuscript
       </p>
-
-      <div class="w-48 h-1 bg-gradient-to-r from-transparent via-heritage-gold to-transparent mx-auto mb-8"></div>
-
-      <button id="enter-btn" class="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-heritage-gold/60 text-heritage-gold hover:bg-heritage-gold hover:text-heritage-navy font-semibold text-xs tracking-wider uppercase transition-all duration-300">
+      <div class="w-48 h-0.5 bg-gradient-to-r from-transparent via-heritage-gold to-transparent mx-auto mb-8"></div>
+      <button class="px-8 py-3 rounded-full border border-heritage-gold/80 bg-heritage-gold/10 text-heritage-gold text-xs font-serif font-bold uppercase tracking-widest hover:bg-heritage-gold hover:text-heritage-navy transition-all duration-300 shadow">
         Enter Experience &rarr;
       </button>
     </div>
-
-    <div class="absolute bottom-0 left-0 h-1 bg-heritage-gold/40 w-full">
+    <div class="absolute bottom-0 left-0 w-full h-1 bg-white/10">
       <div id="intro-progress" class="h-full bg-heritage-gold w-0 transition-all duration-[2200ms] ease-linear"></div>
     </div>
   </div>
 
-  <!-- NAVBAR -->
-  <header class="sticky top-0 z-40 bg-heritage-navy/95 backdrop-blur-md border-b border-heritage-gold/20 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-4 flex items-center justify-between">
+  <!-- ==================================================== -->
+  <!-- 2. STICKY NAVBAR                                     -->
+  <!-- ==================================================== -->
+  <header class="sticky top-0 z-40 bg-heritage-navy/95 backdrop-blur-md border-b border-heritage-gold/30 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-lg bg-heritage-gold/20 border border-heritage-gold/40 flex items-center justify-center font-serif font-bold text-heritage-gold text-xl">
+        <div class="w-10 h-10 rounded-lg bg-heritage-gold/20 border border-heritage-gold/60 flex items-center justify-center font-serif font-bold text-heritage-gold text-lg">
           JV
         </div>
         <div>
-          <span class="font-serif font-bold tracking-wider text-lg block text-heritage-cream">JNANA-VASTRA</span>
-          <span class="text-[10px] tracking-widest text-heritage-gold uppercase block">Heritage Weave Tech</span>
+          <span class="font-serif font-bold tracking-wider text-base sm:text-lg block text-heritage-cream">JNANA-VASTRA</span>
+          <span class="text-[10px] tracking-widest text-heritage-gold uppercase block">A Woven Manuscript</span>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
-        <a href="#about" class="hover:text-heritage-gold transition">About Project</a>
-        <a href="#workflow" class="hover:text-heritage-gold transition">CAD & Weaving</a>
-        <a href="#team" class="hover:text-heritage-gold transition">Project Team</a>
+      <nav class="hidden md:flex items-center gap-7 text-xs font-semibold uppercase tracking-wider text-slate-300">
+        <a href="#about" class="hover:text-heritage-gold transition">About</a>
+        <a href="#audio-shlokas" class="hover:text-heritage-gold transition">Sacred Audio</a>
+        <a href="#video-showcase" class="hover:text-heritage-gold transition">Loom Video</a>
+        <a href="#certificates" class="hover:text-heritage-gold transition">Certificates</a>
+        <a href="#team" class="hover:text-heritage-gold transition">The Team</a>
       </nav>
 
-      <a href="#workflow" class="hidden sm:inline-block px-4 py-2 text-xs font-semibold uppercase tracking-wider text-heritage-navy bg-heritage-gold rounded hover:bg-yellow-400 transition shadow">
-        View Innovation
+      <a href="#audio-shlokas" class="px-4 py-2 text-xs font-serif font-bold uppercase tracking-wider bg-heritage-gold text-heritage-navy rounded hover:bg-yellow-400 transition shadow">
+        Listen Shloka
       </a>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="relative pt-16 pb-24 overflow-hidden border-b border-amber-900/10">
+  <!-- ==================================================== -->
+  <!-- 3. HERO SECTION                                      -->
+  <!-- ==================================================== -->
+  <section class="relative pt-16 pb-20 border-b border-amber-900/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         <div class="lg:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-heritage-gold/40 bg-heritage-gold/10 text-heritage-goldDark text-xs font-semibold tracking-wider uppercase">
-            <span>⚜</span> Electronic Jacquard & Shloka Archiving
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-heritage-gold/40 bg-heritage-gold/10 text-heritage-goldDark text-xs font-semibold tracking-wider uppercase">
+            <span>⚜</span> Preserving Sacred Literature In Warp & Weft
           </div>
 
-          <h1 class="font-serif text-4xl sm:text-6xl font-extrabold text-heritage-navy leading-[1.15]">
-            Translating Sacred Manuscripts into <span class="shimmer-gold">Woven Heritage</span>
+          <h1 class="font-serif text-4xl sm:text-6xl font-extrabold text-heritage-navy leading-[1.12]">
+            Jnana-Vastra <br/>
+            <span class="shimmer-gold">A Woven Manuscript</span>
           </h1>
 
-          <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl">
-            <strong>Jnana-Vastra</strong> bridges the ancient wisdom of calligraphic palm-leaf shlokas with state-of-the-art Electronic Jacquard technology. By transforming historic Sanskrit calligraphy into high-precision binary pixel weaves, we immortalize India's cultural heritage on sustainable, premium textiles.
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
+            An engineering milestone bridging classical Sanskrit manuscript calligraphy with modern electronic Jacquard weaving. By converting sacred Bhagavad Gita verses into precise binary weaves, we immortalize India's timeless philosophical literature onto handloom and rapier textile structures.
           </p>
 
           <div class="flex flex-wrap gap-4 pt-2">
-            <a href="#about" class="px-6 py-3.5 bg-heritage-navy text-white text-xs font-bold uppercase tracking-widest rounded shadow-lg hover:bg-heritage-slate transition">
-              Explore Research
+            <a href="#audio-shlokas" class="px-6 py-3.5 bg-heritage-navy text-white text-xs font-serif font-bold uppercase tracking-widest rounded shadow hover:bg-heritage-slate transition">
+              Sacred Recitations ♫
             </a>
-            <a href="#team" class="px-6 py-3.5 border border-heritage-gold text-heritage-navy bg-white text-xs font-bold uppercase tracking-widest rounded hover:bg-heritage-gold/10 transition">
-              Meet The Batch
+            <a href="#video-showcase" class="px-6 py-3.5 border border-heritage-gold text-heritage-navy bg-white text-xs font-serif font-bold uppercase tracking-widest rounded shadow-sm hover:bg-heritage-gold/10 transition">
+              Watch Loom Demonstration
             </a>
           </div>
 
-          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-heritage-gold/20">
-            <div>
-              <div class="text-2xl font-bold font-serif text-heritage-goldDark">100%</div>
-              <div class="text-xs text-slate-500 font-medium">Digital CAD Integration</div>
-            </div>
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-heritage-gold/20 text-center sm:text-left">
             <div>
               <div class="text-2xl font-bold font-serif text-heritage-goldDark">1-Bit</div>
-              <div class="text-xs text-slate-500 font-medium">Monochrome Precision</div>
+              <div class="text-xs text-slate-500 font-medium">Binary Pixel Drafting</div>
             </div>
             <div>
-              <div class="text-2xl font-bold font-serif text-heritage-goldDark">Electronic</div>
-              <div class="text-xs text-slate-500 font-medium">Jacquard Loom Drive</div>
+              <div class="text-2xl font-bold font-serif text-heritage-goldDark">Jacquard</div>
+              <div class="text-xs text-slate-500 font-medium">Individual End Control</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold font-serif text-heritage-goldDark">VTU-GSKSJTI</div>
+              <div class="text-xs text-slate-500 font-medium">Capstone Innovation</div>
             </div>
           </div>
         </div>
 
+        <!-- Hero Motif Card -->
         <div class="lg:col-span-5">
-          <div class="relative rounded-2xl p-1 bg-gradient-to-tr from-heritage-gold via-amber-200 to-heritage-navy shadow-2xl">
-            <div class="bg-heritage-navy rounded-2xl p-6 text-white space-y-6 relative overflow-hidden">
-              <div class="flex items-center justify-between border-b border-white/10 pb-4">
-                <span class="text-xs font-serif tracking-widest text-heritage-gold uppercase">Artefact Matrix</span>
-                <span class="text-[11px] px-2.5 py-0.5 rounded bg-white/10 text-emerald-300 font-mono">Verified Weave</span>
+          <div class="rounded-2xl p-1 bg-gradient-to-tr from-heritage-gold via-amber-200 to-heritage-navy shadow-2xl">
+            <div class="bg-heritage-cardDark rounded-2xl p-6 text-white space-y-5">
+              <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                <span class="text-xs font-serif tracking-widest text-heritage-gold uppercase">Manuscript Interlacement</span>
+                <span class="text-[11px] px-2.5 py-0.5 rounded bg-emerald-900/60 text-emerald-300 font-mono">100% Woven Fabric</span>
               </div>
 
-              <div class="border border-white/10 bg-black/40 rounded-xl p-5 font-mono text-xs space-y-3">
-                <div class="text-heritage-gold flex items-center justify-between">
-                  <span>// CALLIGRAPHY TRANSLATION</span>
-                  <span class="text-white/40">BMP-1BIT</span>
-                </div>
-                <div class="p-3 bg-heritage-slate/70 rounded text-[11px] text-amber-100 font-serif leading-relaxed italic border-l-2 border-heritage-gold">
-                  "विद्या ददाति विनयं विनयाद्याति पात्रताम् ।<br/>
-                  पात्रत्वाद्धनमाप्नोति धनाद्धर्मं ततः सुखम् ॥"
-                </div>
-                <div class="text-[11px] text-slate-400 space-y-1">
-                  <div class="flex justify-between"><span>Warp Density:</span> <span class="text-white">High Tenacity Silk/Cotton</span></div>
-                  <div class="flex justify-between"><span>Hook Allocation:</span> <span class="text-white">Individual End Control</span></div>
-                  <div class="flex justify-between"><span>Shedding Mechanism:</span> <span class="text-heritage-gold">Direct Solenoid Drive</span></div>
+              <div class="p-4 bg-heritage-navy/80 border border-white/10 rounded-xl space-y-3">
+                <p class="font-sanskrit text-amber-200 text-sm sm:text-base leading-relaxed text-center">
+                  यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।<br/>
+                  अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥
+                </p>
+                <div class="text-[11px] font-mono text-slate-400 border-t border-white/10 pt-2 flex justify-between">
+                  <span>Warp: Mulberry Silk / Cotton</span>
+                  <span class="text-heritage-gold">Electronic Solenoid</span>
                 </div>
               </div>
 
               <p class="text-xs text-slate-300 italic text-center">
-                Preserving intangible literature through the interlacement of warp and weft.
+                "Preserving literary heritage not merely on paper, but through the enduring interlacement of thread."
               </p>
             </div>
           </div>
@@ -199,51 +199,173 @@
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
-  <section id="about" class="py-20 bg-white">
+  <!-- ==================================================== -->
+  <!-- 4. BHAGAVAD GITA SACRED AUDIO SECTION                -->
+  <!-- ==================================================== -->
+  <section id="audio-shlokas" class="py-20 bg-heritage-surface border-b border-heritage-gold/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-heritage-navy">The Innovation Behind Jnana-Vastra</h2>
-        <div class="w-20 h-1 bg-heritage-gold mx-auto"></div>
-        <p class="text-slate-600 text-sm sm:text-base">
-          Converting calligraphic scriptures directly into interlaced fabrics required solving multi-disciplinary challenges across textile CAD, warp tension, and bitmap drafting.
+      <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+        <span class="text-heritage-goldDark font-serif text-xs uppercase tracking-widest block font-bold">Vocal Harmony & Devotion</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-heritage-navy">Bhagavad Gita Audio Recitations</h2>
+        <div class="w-16 h-1 bg-heritage-gold mx-auto"></div>
+        <p class="text-slate-600 text-sm">
+          Listen to the sacred verses woven into the Jnana-Vastra textiles, performed in classical Indian Vedic meters.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="p-8 rounded-xl bg-heritage-cream border border-heritage-gold/20 shadow-sm">
-          <div class="text-3xl mb-4">✍️</div>
-          <h3 class="font-serif text-lg font-bold text-heritage-navy mb-2">Manuscript Digitization</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            High-resolution scanning of traditional manuscripts, capturing subtle ink strokes, ligatures, and Sanskrit characters for vectorization.
-          </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        
+        <!-- Track 1 -->
+        <div class="bg-white rounded-2xl p-6 border border-heritage-gold/30 shadow-md flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[11px] font-bold font-serif tracking-widest uppercase text-heritage-crimson">Chapter 4, Verse 7–8</span>
+              <span class="text-xs font-mono text-slate-400">Audio • Chant</span>
+            </div>
+            <h3 class="font-serif font-bold text-heritage-navy text-lg">Dharma Samsthapana Shloka</h3>
+            <p class="font-sanskrit text-sm text-slate-700 mt-2 bg-heritage-surface/60 p-3 rounded-lg border border-amber-900/10">
+              यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।<br/>
+              अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥
+            </p>
+          </div>
+          <div>
+            <audio controls class="w-full mt-2 rounded-lg accent-heritage-goldDark">
+              <source src="https://srujansagar24-boop.github.io/jnana-vastra/assets/audio/shloka1.mp3" type="audio/mpeg">
+              <source src="https://raw.githubusercontent.com/srujansagar24-boop/jnana-vastra/main/assets/audio/shloka1.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
         </div>
 
-        <div class="p-8 rounded-xl bg-heritage-cream border border-heritage-gold/20 shadow-sm">
-          <div class="text-3xl mb-4">🖩</div>
-          <h3 class="font-serif text-lg font-bold text-heritage-navy mb-2">CAD & 1-Bit Conversion</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Exact mathematical reduction into clean 1-bit monochrome bitmaps where black and white pixels explicitly denote lift and drop sequences of Jacquard hooks.
-          </p>
+        <!-- Track 2 -->
+        <div class="bg-white rounded-2xl p-6 border border-heritage-gold/30 shadow-md flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[11px] font-bold font-serif tracking-widest uppercase text-heritage-crimson">Chapter 2, Verse 47</span>
+              <span class="text-xs font-mono text-slate-400">Audio • Chant</span>
+            </div>
+            <h3 class="font-serif font-bold text-heritage-navy text-lg">Karmanye Vadhikaraste</h3>
+            <p class="font-sanskrit text-sm text-slate-700 mt-2 bg-heritage-surface/60 p-3 rounded-lg border border-amber-900/10">
+              कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।<br/>
+              मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥
+            </p>
+          </div>
+          <div>
+            <audio controls class="w-full mt-2 rounded-lg accent-heritage-goldDark">
+              <source src="https://srujansagar24-boop.github.io/jnana-vastra/assets/audio/shloka2.mp3" type="audio/mpeg">
+              <source src="https://raw.githubusercontent.com/srujansagar24-boop/jnana-vastra/main/assets/audio/shloka2.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
         </div>
 
-        <div class="p-8 rounded-xl bg-heritage-cream border border-heritage-gold/20 shadow-sm">
-          <div class="text-3xl mb-4">⚙️</div>
-          <h3 class="font-serif text-lg font-bold text-heritage-navy mb-2">Electronic Jacquard Execution</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Flawless execution on modern electronic Jacquard sheds, synchronizing pick selection to achieve high-contrast legibility.
-          </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================== -->
+  <!-- 5. WEAVING PROCESS VIDEO SHOWCASE                    -->
+  <!-- ==================================================== -->
+  <section id="video-showcase" class="py-20 bg-heritage-navy text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+        <span class="text-heritage-gold font-serif text-xs uppercase tracking-widest block">Loom Demonstration</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold">Loom Operation & Weaving Video</h2>
+        <div class="w-16 h-1 bg-heritage-gold mx-auto"></div>
+        <p class="text-slate-400 text-sm">
+          Watch the real-time execution of the calligraphic bitmap files running on the electronic Jacquard rapier loom.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto bg-heritage-slate/80 rounded-2xl overflow-hidden border border-heritage-gold/40 shadow-2xl p-2 sm:p-4">
+        <div class="relative w-full aspect-video bg-black rounded-xl overflow-hidden flex items-center justify-center">
+          <video controls class="w-full h-full object-cover">
+            <source src="https://srujansagar24-boop.github.io/jnana-vastra/assets/video/weaving.mp4" type="video/mp4">
+            <source src="https://raw.githubusercontent.com/srujansagar24-boop/jnana-vastra/main/assets/video/weaving.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="py-4 px-2 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-xs text-slate-300">
+          <div><strong class="text-heritage-gold">Machine Setup:</strong> Electronic Jacquard Shedding System with Rapier Weft Insertion</div>
+          <div class="font-mono text-heritage-gold/80">Department Loom Hall • GSKSJTI</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TEAM SECTION -->
-  <section id="team" class="py-20 bg-heritage-cream">
+  <!-- ==================================================== -->
+  <!-- 6. CERTIFICATES & RECOGNITION SECTION                -->
+  <!-- ==================================================== -->
+  <section id="certificates" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-        <span class="text-heritage-goldDark font-serif text-xs uppercase tracking-widest block">Project Engineering Team</span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-heritage-navy">The Innovators</h2>
+      <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+        <span class="text-heritage-goldDark font-serif text-xs uppercase tracking-widest block font-bold">Academic & Workshop Milestones</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-heritage-navy">Certificates & Endorsements</h2>
+        <div class="w-16 h-1 bg-heritage-gold mx-auto"></div>
+        <p class="text-slate-600 text-sm">
+          Verified academic completions, workshop accreditations, and project presentations.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        
+        <!-- Certificate 1 -->
+        <div class="bg-heritage-surface/60 rounded-2xl p-5 border border-heritage-gold/30 flex flex-col justify-between hover:shadow-lg transition">
+          <div>
+            <div class="h-48 bg-white border border-heritage-gold/20 rounded-xl mb-4 overflow-hidden flex items-center justify-center p-2 relative group">
+              <img src="https://srujansagar24-boop.github.io/jnana-vastra/assets/images/cert1.jpg" alt="Certificate 1" onerror="this.src='https://placehold.co/600x400/0B132B/D4AF37?text=Project+Completion+Certificate'" class="w-full h-full object-contain rounded">
+            </div>
+            <h3 class="font-serif font-bold text-heritage-navy text-base mb-1">Capstone Project Certification</h3>
+            <p class="text-xs text-slate-600">Official verification for Jnana-Vastra electronic Jacquard manuscript weaving research.</p>
+          </div>
+          <div class="pt-4 border-t border-heritage-gold/20 mt-4 flex justify-between items-center text-[11px] font-mono text-heritage-goldDark">
+            <span>GSKSJTI Bangalore</span>
+            <span class="font-bold">Verified ✓</span>
+          </div>
+        </div>
+
+        <!-- Certificate 2 -->
+        <div class="bg-heritage-surface/60 rounded-2xl p-5 border border-heritage-gold/30 flex flex-col justify-between hover:shadow-lg transition">
+          <div>
+            <div class="h-48 bg-white border border-heritage-gold/20 rounded-xl mb-4 overflow-hidden flex items-center justify-center p-2 relative group">
+              <img src="https://srujansagar24-boop.github.io/jnana-vastra/assets/images/cert2.jpg" alt="Certificate 2" onerror="this.src='https://placehold.co/600x400/0B132B/D4AF37?text=Handloom+Heritage+Workshop'" class="w-full h-full object-contain rounded">
+            </div>
+            <h3 class="font-serif font-bold text-heritage-navy text-base mb-1">Handloom Heritage Workshop</h3>
+            <p class="text-xs text-slate-600">Digitalizing Silk Handloom Heritage Design under National Entrepreneurship Development.</p>
+          </div>
+          <div class="pt-4 border-t border-heritage-gold/20 mt-4 flex justify-between items-center text-[11px] font-mono text-heritage-goldDark">
+            <span>IIHT Varanasi / SKSJTI</span>
+            <span class="font-bold">Verified ✓</span>
+          </div>
+        </div>
+
+        <!-- Certificate 3 -->
+        <div class="bg-heritage-surface/60 rounded-2xl p-5 border border-heritage-gold/30 flex flex-col justify-between hover:shadow-lg transition">
+          <div>
+            <div class="h-48 bg-white border border-heritage-gold/20 rounded-xl mb-4 overflow-hidden flex items-center justify-center p-2 relative group">
+              <img src="https://srujansagar24-boop.github.io/jnana-vastra/assets/images/cert3.jpg" alt="Certificate 3" onerror="this.src='https://placehold.co/600x400/0B132B/D4AF37?text=Technical+Excellence+Award'" class="w-full h-full object-contain rounded">
+            </div>
+            <h3 class="font-serif font-bold text-heritage-navy text-base mb-1">Academic Seminar Defense</h3>
+            <p class="text-xs text-slate-600">Successful evaluation & technical review before the VTU academic committee.</p>
+          </div>
+          <div class="pt-4 border-t border-heritage-gold/20 mt-4 flex justify-between items-center text-[11px] font-mono text-heritage-goldDark">
+            <span>VTU Evaluated</span>
+            <span class="font-bold">Verified ✓</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================== -->
+  <!-- 7. THE PROJECT TEAM (WITH UPDATED CREDENTIALS)       -->
+  <!-- ==================================================== -->
+  <section id="team" class="py-20 bg-heritage-surface border-t border-heritage-gold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+        <span class="text-heritage-goldDark font-serif text-xs uppercase tracking-widest block font-bold">Engineers & Creators</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-heritage-navy">Jnana-Vastra Team</h2>
         <div class="w-16 h-1 bg-heritage-gold mx-auto"></div>
         <p class="text-slate-600 text-sm">
           Department of Textile Technology • Government Sri Krishnarajendra Silver Jubilee Technological Institute (GSKSJTI), Bengaluru
@@ -252,9 +374,9 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <!-- Member 1: Abishek Dhull -->
-        <div class="bg-white rounded-xl p-6 border-2 border-heritage-gold/40 shadow-md">
-          <div class="inline-block text-[10px] px-2 py-0.5 bg-heritage-gold/15 text-heritage-goldDark font-bold rounded-full uppercase mb-4">
+        <!-- Member 1: Abishek Dhull (CORRECTED USN) -->
+        <div class="bg-white rounded-2xl p-6 border-2 border-heritage-gold shadow-md hover:shadow-xl transition relative">
+          <div class="inline-block text-[10px] px-2.5 py-0.5 bg-heritage-gold/20 text-heritage-goldDark font-bold rounded-full uppercase mb-4">
             Core Member
           </div>
           <div class="w-16 h-16 rounded-full bg-heritage-navy text-heritage-gold font-serif text-xl font-bold flex items-center justify-center mb-4">
@@ -266,49 +388,57 @@
         </div>
 
         <!-- Member 2: Srujan H M -->
-        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
           <div class="w-16 h-16 rounded-full bg-heritage-slate text-white font-serif text-xl font-bold flex items-center justify-center mb-4 mt-7">
             SH
           </div>
           <h3 class="font-serif text-base font-bold text-heritage-navy">Srujan H M</h3>
           <p class="text-xs font-mono font-medium text-slate-500 mb-2">Project Collaborator</p>
-          <p class="text-xs text-slate-500">Fabric Characterization & Digital Loom Setup</p>
+          <p class="text-xs text-slate-500">Fabric Characterization & Loom Parameter Analysis</p>
         </div>
 
         <!-- Member 3: Tharak Babu A -->
-        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
           <div class="w-16 h-16 rounded-full bg-heritage-slate text-white font-serif text-xl font-bold flex items-center justify-center mb-4 mt-7">
             TB
           </div>
           <h3 class="font-serif text-base font-bold text-heritage-navy">Tharak Babu A</h3>
           <p class="text-xs font-mono font-medium text-slate-500 mb-2">Project Collaborator</p>
-          <p class="text-xs text-slate-500">Yarn Architecture & Structural Analysis</p>
+          <p class="text-xs text-slate-500">Yarn Architecture & Tensile Strength Evaluation</p>
         </div>
 
         <!-- Member 4: Nihal DJ -->
-        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
           <div class="w-16 h-16 rounded-full bg-heritage-slate text-white font-serif text-xl font-bold flex items-center justify-center mb-4 mt-7">
             ND
           </div>
           <h3 class="font-serif text-base font-bold text-heritage-navy">Nihal DJ</h3>
           <p class="text-xs font-mono font-medium text-slate-500 mb-2">Project Collaborator</p>
-          <p class="text-xs text-slate-500">Weave Testing & Manuscript Documentation</p>
+          <p class="text-xs text-slate-500">Manuscript Sourcing & Fabric Quality Testing</p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-heritage-navy text-white border-t border-heritage-gold/20 py-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 text-center space-y-2">
-      <span class="font-serif font-bold text-lg text-heritage-gold tracking-wide">JNANA-VASTRA</span>
-      <p class="text-xs text-slate-400">Preserving sacred manuscripts through modern digital weaving technology.</p>
-      <p class="text-[11px] text-slate-500 pt-4">&copy; 2026 Jnana-Vastra Team. Department of Textile Technology, GSKSJTI Bengaluru.</p>
+  <!-- ==================================================== -->
+  <!-- 8. FOOTER                                            -->
+  <!-- ==================================================== -->
+  <footer class="bg-heritage-navy text-white border-t border-heritage-gold/30 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 text-center space-y-3">
+      <div class="font-serif font-bold text-xl text-heritage-gold tracking-wider">JNANA-VASTRA : A WOVEN MANUSCRIPT</div>
+      <p class="text-xs text-slate-400 max-w-xl mx-auto">
+        Synthesizing ancient manuscript calligraphy and modern digital Jacquard engineering into enduring fabric heritage.
+      </p>
+      <div class="pt-4 text-[11px] text-slate-500 border-t border-white/10 max-w-md mx-auto">
+        &copy; 2026 Jnana-Vastra Research Batch • GSKSJTI Bengaluru
+      </div>
     </div>
   </footer>
 
-  <!-- SCRIPT -->
+  <!-- ==================================================== -->
+  <!-- 9. SCRIPT: CURTAIN DISMISSAL                         -->
+  <!-- ==================================================== -->
   <script>
     function dismissIntro() {
       const overlay = document.getElementById('namaste-overlay');
@@ -327,6 +457,6 @@
       setTimeout(dismissIntro, 2200);
     });
   </script>
-</body>
-    </html>
 
+</body>
+</html>
